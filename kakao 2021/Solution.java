@@ -2,10 +2,10 @@ class Solution {
     public String solution(String new_id) {        
     	String answer = "";
         
-    	//1´Ü°è: ¿µ¹® ¼Ò¹®ÀÚ·Î º¯°æ 
+    	//1ë‹¨ê³„: ì˜ë¬¸ ì†Œë¬¸ìë¡œ ë³€ê²½ 
     	new_id = new_id.toLowerCase();
     	
-    	//2´Ü°è: ¼Ò¹®ÀÚ, ¼ıÀÚ, -, _, . ¿Ü ¹®ÀÚ¿­ Á¦¿Ü
+    	//2ë‹¨ê³„: ì†Œë¬¸ì, ìˆ«ì, -, _, . ì™¸ ë¬¸ìì—´ ì œì™¸
     	for(int i = 0; i < new_id.length(); i++) {
     		char ch = new_id.charAt(i);
     		
@@ -18,7 +18,7 @@ class Solution {
     		}
     	}
     	    	
-    	//3´Ü°è: 2¹ø ÀÌ»ó .¿¬¼Ó => ÇÏ³ªÀÇ ¸¶Ä§Ç¥·Î
+    	//3ë‹¨ê³„: 2ë²ˆ ì´ìƒ .ì—°ì† => í•˜ë‚˜ì˜ ë§ˆì¹¨í‘œë¡œ
     	String id = "";
     	for(int i = 0; i < answer.length(); i++) {    		    		    		
     		if(answer.charAt(i) == '.') {
@@ -35,7 +35,7 @@ class Solution {
     	}
     	answer = id;
     	    	
-    	//4´Ü°è: .°¡ Ã³À½ÀÌ³ª ³¡¿¡ Á¸Àç => Á¦°Å    	
+    	//4ë‹¨ê³„: .ê°€ ì²˜ìŒì´ë‚˜ ëì— ì¡´ì¬ => ì œê±°    	
     	if(answer.startsWith(".")) {
     		answer = answer.substring(1);
     	}    	
@@ -44,12 +44,12 @@ class Solution {
     		answer = answer.substring(0, answer.length() - 1);
     	}
     	
-    	//5´Ü°è: new_id°¡ null ÀÌ¸é a ´ëÀÔ
+    	//5ë‹¨ê³„: new_idê°€ null ì´ë©´ a ëŒ€ì…
     	if(answer.length() == 0) {
     		answer = "a";
     	}
 
-    	//6´Ü°è: new_id°¡ 16ÀÚ ÀÌ»óÀÌ¸é 15ÀÌ¿Ü ¸ğµÎ Á¦°Å, 15ÀÚ ¸Ç³¡ .ÀÌ¸é .Á¦°Å  
+    	//6ë‹¨ê³„: new_idê°€ 16ì ì´ìƒì´ë©´ 15ì´ì™¸ ëª¨ë‘ ì œê±°, 15ì ë§¨ë .ì´ë©´ .ì œê±°  
         
     	if(answer.length() > 15) {
     		answer = answer.substring(0, 15);
@@ -59,7 +59,7 @@ class Solution {
     		}    		
     	}    	    
     	
-    	//7´Ü°è: new_id°¡ 2ÀÚ ÀÌÇÏ => ±æÀÌ°¡ 3ÀÏ¶§±îÁö new_id ¸¶Áö¸· ±ÛÀÚ ¹İº¹ 
+    	//7ë‹¨ê³„: new_idê°€ 2ì ì´í•˜ => ê¸¸ì´ê°€ 3ì¼ë•Œê¹Œì§€ new_id ë§ˆì§€ë§‰ ê¸€ì ë°˜ë³µ 
     	if(answer.length() <= 2) {    		
     		while(answer.length() < 3) {
     			answer += answer.charAt(answer.length()-1);    		
