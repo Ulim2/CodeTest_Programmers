@@ -1,4 +1,4 @@
-class Solution2 {
+class new_id {
 	public String solution(String new_id) {
 		String answer = new_id.toLowerCase();
 		
